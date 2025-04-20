@@ -1,0 +1,12 @@
+---
+title: "Literature"
+output: html_document
+---
+
+# Articles on the topic
+
+```{r}
+# Vezzoli et al. (2022) https://onlinelibrary.wiley.com/doi/10.1111/jasp.12928
+# García-Sánchez et al. (2024) https://link.springer.com/article/10.1007/s11205-024-03306-x 
+```
+
