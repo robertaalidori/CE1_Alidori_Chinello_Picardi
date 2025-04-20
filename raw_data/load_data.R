@@ -15,8 +15,10 @@ library(tidyverse)
 #Load data
 
 ```{r} 
+
 #Load ESS11
-ess11 <- readr::read_csv("ESS11.csv")
+ess11 <- readr::read_csv("raw_data/ESS11.csv")
+
 
 ```
 
