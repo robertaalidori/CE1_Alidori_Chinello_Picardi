@@ -11,13 +11,15 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```{r} 
 #Load packages
 library(tidyverse)
+library(readr)
 ```
 #Load data
 
 ```{r} 
 
-#Load ESS11
-ess11 <- readr::read_csv("raw_data/ESS11.csv")
+#Load ESS9
+ESS9 <- read_csv("raw_data/ESS9.csv")
+View(ESS9)
 
 
 ```
