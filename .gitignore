@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+# Ignore dataset
+ESS9.csv
