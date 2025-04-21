@@ -11,6 +11,8 @@ view(ESS11)
 
 #Questa è solo una prima prova
 
+#Come faccio il recode del gender? 1 = Men; 2 = Women
+
 
 ESS11_recoded <- ESS11 |> 
   select(c("cntry", "agea", "gndr", "health", "ctrlife", "medtrnp", "hltprca", "fnsdfml" )) |> 
