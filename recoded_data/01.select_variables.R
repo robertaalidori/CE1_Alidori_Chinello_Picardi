@@ -13,11 +13,13 @@ ESS9 <- read_csv("raw_data/ESS9.csv")
 
 # Selected variables: level of happiness and wealth fair/unfair (we need to decide which one of the two to keep)
 
-da_ESS9 <- ESS9 |> 
+ESS9_recoded <- ESS9 |> 
     select(
       happy, wltdffr
     )
   
 # Check the structure of the dataset
 
-view(da_ESS9)
+view(ESS9_recoded)
+
+write.csv(ESS9_recoded, "receded_data/ESS9_recoded.csv", row.names = FALSE)
