@@ -4,7 +4,7 @@
 -------
 # Packages
 -------
-  
+
 library(tidyverse)
 library(dplyr)
 
@@ -24,3 +24,6 @@ da_ESS9 <- ESS9 |>
       happy, wltdffr
     )
   
+# Check the structure of the dataset
+
+view(da_ESS9)
