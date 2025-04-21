@@ -16,10 +16,13 @@ ESS9 <- read_csv("raw_data/ESS9.csv")
 ESS9_recoded <- ESS9 |> 
     select(
       happy, wltdffr
+    ) |> 
+    rename(
+      wealth_diff = wltdffr
     )
   
 # Check the structure of the dataset
 
 view(ESS9_recoded)
 
-write.csv(ESS9_recoded, "receded_data/ESS9_recoded.csv", row.names = FALSE)
+write.csv(ESS9_recoded, "recoded_data/ESS9_recoded.csv", row.names = FALSE)
