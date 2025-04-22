@@ -24,7 +24,7 @@ ESS9_recoded <- ESS9 |>
 # create a new variable happy_group which contains 3 values: 0–3 = Low; 4–6 = Medium; 7–10 = High
     
 ESS9_recoded <- ESS9_recoded |> 
-mutate(happy_group =  case_when(
+mutate(happy_group = case_when(
       happy >= 0 & happy <= 3 ~ "Low",
       happy >= 4 & happy <= 6 ~ "Medium",
       happy >= 7 & happy <= 10 ~ "High",
@@ -44,11 +44,12 @@ ESS9_recoded <- ESS9_recoded |>
       TRUE ~ NA_character_
     )) 
 
-view(ESS9_recoded$wealth)
+ESS9_recoded$wealth
 
 
 # Create new dataset "ESS9_clean" without NAs in variable "happy_group"
-#the new dataset should include both filters otherwise you overwrite the object, so I changed the code adding all filter in the same object and this is the result:
+# the new dataset should include both filters otherwise you overwrite the object, 
+# so I changed the code adding all filter in the same object and this is the result:
 
 ESS9_clean <- ESS9_recoded |> 
   filter(!is.na(happy_group), !is.na(wealth))  
