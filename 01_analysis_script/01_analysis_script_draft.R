@@ -2,17 +2,18 @@
 
 library(dplyr)
 
-#statistiche base 
+#descriptive statistic (average and so on)
 
-summary(da_ESS9$happy)
-summary(da_ESS9$wealth)
+summary(ESS9_clean$happy)
+summary(ESS9_clean$wealth)
 
-#tabella dati 
-table(da_ESS9$wealth, da_ESS9$happy_group)
+#table 
 
-#media "happy" con "wealth"
+table(ESS9_clean$wealth, ESS9_clean$happy_group)
 
-da_ESS9 |>
+#distribution of population across wealth fairness and subjective happiness
+
+ESS9_clean |>
   filter(!is.na(wealth), !is.na(happy_group)) |>
   count(wealth, happy_group) |> 
   mutate(
@@ -20,10 +21,10 @@ da_ESS9 |>
     ) |>
   arrange(desc(perc_on_total))
 
-#ci sono molti NA quindi vediamo quanti sono, anche se li ho già eliminati. Se sono tanti, cerchiamo di capire se includerli. 
+#check for NAs
 
-total_rows <- nrow(da_ESS9)
-na_rows <- sum(is.na(da_ESS9$wealth) | is.na(da_ESS9$happy_group))
+total_rows <- nrow(ESS9_clean)
+na_rows <- sum(is.na(ESS9_clean$wealth) | is.na(ESS9_clean$happy_group))
 valid_rows <- total_rows - na_rows
 perc_na <- round(100 * na_rows / total_rows, 2)
 
@@ -31,33 +32,60 @@ cat("Totale righe:", total_rows, "\n")
 cat("Righe con NA rimosse:", na_rows, "\n")
 cat("Percentuale di NA:", perc_na, "%\n")
 
-#RISULTATO NA: sono 7,09% delle righe, quindi accettabile, credo. 
+#RESULT NA: 0 
 
 
-# regression 
-
-happiness_by_inequality <- lm(happy ~ wltdffr, data = da_ESS9)
-summary(happiness_by_inequality)
+#chisquare 
 
 
-#graph 
+table_chisq <- table(ESS9_clean$wealth, ESS9_clean$happy_group)
+table_chisq
 
 
-library(ggplot2)
+# Test
+chisq.test(table_chisq)
 
-ggplot(da_ESS9, aes(x = wltdffr, y = happy)) +
-  geom_jitter(width = 0.2, height = 0.2, alpha = 0.3) +
-  geom_smooth(happiness_by_inequality = "lm", se = TRUE, color = "blue") +
-  labs(
-    x = "Perceived unfairness of wealth distribution",
-    y = "Happiness (0–10)",
-    title = "Linear regression: Happiness ~ Perceived Inequality"
+#we find out that there's a significant association 
+
+
+
+#means comparison within each category of wealth for the estimates precision
+
+ESS9_clean |>
+  group_by(wealth) |>
+  summarise(
+    mean_happy = mean(happy),
+    sd = sd(happy),
+    n = n(),
+    se = sd / sqrt(n),
+    ci = 1.96 * se
   )
 
-#con il graph è chiaro che nelle variabili ci sono ancora i valori 77, 88, 99, che nella survey indicano valori che non rientrano nei parametri 1-5!
+
+#regression with control variables to make the analysis more robust
+
+lm(happy ~ wltdffr + gndr + agea, data = ESS9)
 
 
+#graph? 
+
+control_var <- lm(happy ~ wltdffr + gndr + agea, data = ESS9)
 
 
+library(broom)
+
+tidy(control_var, conf.int = TRUE) |> 
+  filter(term != "(Intercept)") |> 
+  ggplot(aes(x = term, y = estimate)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2) +
+  labs(
+    title = "Effect of predictors on happiness",
+    x = "Predictors",
+    y = "Estimated effect (with 95% CI)"
+  ) +
+  theme_minimal()
+
+#it's clear that only wealth has a statistically significat effect on happiness
 
 
