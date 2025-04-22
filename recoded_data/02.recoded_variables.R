@@ -46,48 +46,24 @@ ESS9_recoded <- ESS9_recoded |>
 
 view(ESS9_recoded$wealth)
 
-### Check new variables
-
-# Check "happy_group"
-
-ESS9_recoded |> 
-  count(happy_group)
-
-# Check NA values
-ESS9_recoded |> 
-  filter(is.na(happy_group))
 
 # Create new dataset "ESS9_clean" without NAs in variable "happy_group"
+#the new dataset should include both filters otherwise you overwrite the object, so I changed the code adding all filter in the same object and this is the result:
+
 ESS9_clean <- ESS9_recoded |> 
-  filter(!is.na(happy_group))  
+  filter(!is.na(happy_group), !is.na(wealth))  
 
-# Check NA values
+ESS9_clean
 
+# Check "happy group"
 ESS9_clean |> 
   count(happy_group)
-
-# Check "wealth"
-
-ESS9_recoded |> 
-  count(wealth)
-
-# Check NA values
-ESS9_recoded |> 
-  filter(is.na(wealth))
-
-# Create new dataset "ESS9_clean" without NAs in variable "happy_group"
-ESS9_clean <- ESS9_recoded |> 
-  filter(!is.na(wealth))  
 
 # Check NA values
 
 ESS9_clean |> 
   count(wealth)
 
-# Select only variables needed for data analysis in new dataset ESS9_clean
-
-ESS9_clean <- ESS9_clean |> 
-  select(happy, wltdffr)
 
 
 # Save the recoded datasets
@@ -95,6 +71,11 @@ ESS9_clean <- ESS9_clean |>
 write_csv(ESS9_recoded, "recoded_data/ESS9_recoded.csv")
 
 write_csv(ESS9_clean, "recoded_data/ESS9_clean.csv")
+
+
+#check for the final observation we have 
+
+nrow(ESS9_clean)
 
 
   
