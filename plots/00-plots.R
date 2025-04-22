@@ -25,7 +25,7 @@ ggsave("plots/happy_group_bar_chart.png",
 
 
 # Bar chart of wealth
-ggplot(ESS9_recoded, aes(x = fct_infreq(wealth))) +
+ggplot(ESS9_clean, aes(x = fct_infreq(wealth))) +
   geom_bar(fill = "green", 
            color = "black", 
            alpha = 0.7) +
