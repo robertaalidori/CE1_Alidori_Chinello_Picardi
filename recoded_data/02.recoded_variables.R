@@ -31,8 +31,6 @@ mutate(happy_group =  case_when(
       TRUE ~ NA_character_  # for missing or invalid values
     ))
   
-view(ESS9_recoded$happy_group)
-  
 ## Recode and label "wltdffr"
   
 # create a new variable wealth which contains 3 values: 0 = Fair; -4, -3, 3, 4 = Very Unfair; 
@@ -48,6 +46,55 @@ ESS9_recoded <- ESS9_recoded |>
 
 view(ESS9_recoded$wealth)
 
-# Save the recoded dataset
+### Check new variables
+
+# Check "happy_group"
+
+ESS9_recoded |> 
+  count(happy_group)
+
+# Check NA values
+ESS9_recoded |> 
+  filter(is.na(happy_group))
+
+# Create new dataset "ESS9_clean" without NAs in variable "happy_group"
+ESS9_clean <- ESS9_recoded |> 
+  filter(!is.na(happy_group))  
+
+# Check NA values
+
+ESS9_clean |> 
+  count(happy_group)
+
+# Check "wealth"
+
+ESS9_recoded |> 
+  count(wealth)
+
+# Check NA values
+ESS9_recoded |> 
+  filter(is.na(wealth))
+
+# Create new dataset "ESS9_clean" without NAs in variable "happy_group"
+ESS9_clean <- ESS9_recoded |> 
+  filter(!is.na(wealth))  
+
+# Check NA values
+
+ESS9_clean |> 
+  count(wealth)
+
+# Select only variables needed for data analysis in new dataset ESS9_clean
+
+ESS9_clean <- ESS9_clean |> 
+  select(happy, wltdffr)
+
+
+# Save the recoded datasets
+
 write_csv(ESS9_recoded, "recoded_data/ESS9_recoded.csv")
+
+write_csv(ESS9_clean, "recoded_data/ESS9_clean.csv")
+
+
   
