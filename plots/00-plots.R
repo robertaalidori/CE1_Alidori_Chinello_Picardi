@@ -2,7 +2,7 @@ library(dplyr)
 library(tidyverse)
 
 # Load dataset
-ESS9_recoded <- read_csv("recoded_data/ESS9_recoded.csv")
+read_csv("recoded_data/ESS9_clean.csv")
 
 # Exploratory data analysis
 # Check the structure of the dataset
@@ -10,7 +10,7 @@ str(ESS9_recoded)
 
 
 # Bar chart of happy_group
-ggplot(na.omit(ESS9_recoded), aes(x = fct_infreq(happy_group))) +
+ggplot(ESS9_clean, aes(x = fct_infreq(happy_group))) +
   geom_bar(fill = "blue", 
            color = "black", 
            alpha = 0.7) +
@@ -25,7 +25,7 @@ ggsave("plots/happy_group_bar_chart.png",
 
 
 # Bar chart of wealth
-ggplot(na.omit(ESS9_recoded), aes(x = fct_infreq(wealth))) +
+ggplot(ESS9_recoded, aes(x = fct_infreq(wealth))) +
   geom_bar(fill = "green", 
            color = "black", 
            alpha = 0.7) +
