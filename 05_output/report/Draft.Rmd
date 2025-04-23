@@ -22,7 +22,7 @@ This project test whether there is a correlation between perception of inequalit
 
 To measure perception of inequality and subjective well-being we use the ESS Round 9, which has a section with a special focus on justice and fairness. 
 
-From the data-set we selected two variables that provides the most accurate measurements to operationalize our concepts of interest. 
+From the data-set we selected two variables that provide the most accurate measurements to operationalize our concepts of interest. 
 
 - Variable 1: 'happy' - How happy are you
 
@@ -57,7 +57,25 @@ We also calculated the average happiness level within each category of perceived
 These differences, although modest, show a clear decreasing trend in average happiness as the perception of unfairness increases. This trend is accompanied by 95% confidence intervals that do not overlap substantially, indicating statistically robust group differences.
 
 
-ADD-ON analysis:
+
+# Graphical representation
+
+
+```{r}
+p <- ggplot(ESS9_clean, aes(x = wealth, fill = happy_group)) +
+  geom_bar(position = "fill") +
+  labs(title = "Association between Wealth Discrepancies and Happiness",
+       x = "Wealth Discrepancy",
+       y = "Proportion of Happiness Level") +
+  scale_fill_brewer(palette = "Set4") +
+  theme_minimal()
+
+print(p)
+```
+
+
+
+# ADD-ON analysis:
 
 To assess the relationship between perceived inequality and happiness while controlling for individual-level characteristics, we estimated a linear regression model including gender (gndr), age (agea), and years of education (eduyrs) alongside perceived inequality (wltdffr). 
 
@@ -74,6 +92,21 @@ agea; -0.00006 – Negligible
 These results suggest that both higher perceived inequality and higher education levels are independently associated with higher reported happiness, although the overall explanatory power of the model remains low.
 
 
+```{r}
+p_2 <- tidy(control_var, conf.int = TRUE) |> 
+  filter(term != "(Intercept)") |> 
+  ggplot(aes(x = term, y = estimate)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2) +
+  labs(
+    title = "Effect of predictors on happiness",
+    x = "Predictors",
+    y = "Estimated effect (with 95% CI)"
+  ) +
+  theme_minimal()
+
+print(p_2)
+```
 
 
 

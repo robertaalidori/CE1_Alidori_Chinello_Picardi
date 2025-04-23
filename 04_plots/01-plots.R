@@ -40,7 +40,6 @@ ggsave("plots/wealth_bar_chart.png",
 
 
 
-<<<<<<< HEAD
 #Graph of the association between wealth discrepancies and happiness
 
 ggplot(ESS9_clean, aes(x = wealth, fill = happy_group)) +
@@ -62,22 +61,15 @@ ggsave("plots/wealth_happiness_association.png",
 
 lm(happy ~ wltdffr + gndr + agea, data = ESS9)
 
-=======
 #ADD ON: regression for control variables 
->>>>>>> 318b080af5b3b08151f05136aaac8b8613a62212
 
 control_var <- lm(happy ~ wltdffr + gndr + agea + eduyrs, data = ESS9)
 control_var
 
-<<<<<<< HEAD
 # Load necessary libraries
 library(broom)
 
 # control_var plot
-=======
-
-library(broom)
->>>>>>> 318b080af5b3b08151f05136aaac8b8613a62212
 
 tidy(control_var, conf.int = TRUE) |> 
   filter(term != "(Intercept)") |> 
@@ -91,17 +83,7 @@ tidy(control_var, conf.int = TRUE) |>
   ) +
   theme_minimal()
 
-<<<<<<< HEAD
 ggsave("plots/control_var_plot.png", 
        width = 8, height = 6, dpi = 300)
 
 #it's clear that wealth and education have a statistically significant effect on happiness
-
-
-
-
-
-=======
->>>>>>> 318b080af5b3b08151f05136aaac8b8613a62212
-
-
