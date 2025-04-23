@@ -51,8 +51,8 @@ ESS9_recoded$wealth
 # the new dataset should include both filters otherwise you overwrite the object, 
 # so I changed the code adding all filter in the same object and this is the result:
 
-ESS9_clean <- ESS9_recoded |> 
-  filter(!is.na(happy_group), !is.na(wealth))  
+ESS9_clean <- ESS9_recoded |>
+  filter(!is.na(happy_group), !is.na(wealth))
 
 ESS9_clean
 
