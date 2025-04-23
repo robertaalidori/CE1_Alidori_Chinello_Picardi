@@ -39,3 +39,26 @@ ggsave("plots/wealth_bar_chart.png",
        width = 8, height = 6, dpi = 300)
 
 
+
+#ADD ON: regression for control variables 
+
+control_var <- lm(happy ~ wltdffr + gndr + agea + eduyrs, data = ESS9)
+control_var
+
+
+library(broom)
+
+tidy(control_var, conf.int = TRUE) |> 
+  filter(term != "(Intercept)") |> 
+  ggplot(aes(x = term, y = estimate)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2) +
+  labs(
+    title = "Effect of predictors on happiness",
+    x = "Predictors",
+    y = "Estimated effect (with 95% CI)"
+  ) +
+  theme_minimal()
+
+
+

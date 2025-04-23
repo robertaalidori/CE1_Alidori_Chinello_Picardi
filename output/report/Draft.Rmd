@@ -35,7 +35,7 @@ After the selection, we have created two new versions of the variables. They con
 
 ### Anlysis
 
-We first conducted some descriptive analysis and then proceed with a chi-square test as we had categorical variables. To see if the analysis was robust or there are other variables that may evidence a correlation, we conducted a regression model for controlling variables.
+We first conducted a descriptive analysis to explore the distribution of happiness and perceived wealth fairness across the sample. We then conducted a chi-square test to assess whether the two categorical variables were statistically associated. To further investigate if the relations was robust we estimated a linear regression model with other controlling variables.
 
 
 To measure the percentages of the two variables toghether we created a cross-table with percentages.
