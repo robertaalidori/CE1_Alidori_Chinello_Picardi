@@ -15,6 +15,16 @@ The aim of the project is to explore the relationship between perceived economic
 "04_plots"" - graphical outputs used in the final report
 "05_output" - rdm file with the final report
 
+## Contributions
+
+- Number of commits:
+   - Luca Chinello:
+   - Giulia Picardi:
+   - Roberta Alidori:
+- Number of issues opened:
+- Number of pull rrequests opened:
+- Number of pull requests accepted and merged:
+- Number of new branches opened:
 
 ## Analysis Summary
 
