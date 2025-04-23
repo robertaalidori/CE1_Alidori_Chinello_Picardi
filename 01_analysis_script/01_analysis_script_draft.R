@@ -1,17 +1,37 @@
-
+## Title: 03_analysis
 
 library(dplyr)
 
-#descriptive statistic (average and so on)
+#descriptive statistic 
 
-summary(ESS9_clean$happy)
-summary(ESS9_clean$wealth)
+#I don't think using summary is the best way to inspect categorical variables (it doesn't really make sense to have an average of a variable that is not numeric)
+# I think it is better to use:
+
+# Frequency health
+hn <- table(ESS9_clean$happy)
+
+#Proportion health
+hp <- prop.table(hn) 
+
+# Putting the two together health
+ht  <- cbind(hn, hp)
+
+# Frequency wealth
+wn <- table(ESS9_clean$wealth)
+
+#Proportion wealth
+wp <- prop.table(wn) 
+
+# Putting the two together health
+wt  <- cbind(wn, wp)
 
 #table 
 
 table(ESS9_clean$wealth, ESS9_clean$happy_group)
 
-#distribution of population across wealth fairness and subjective happiness
+#distribution of population across wealth fairness and subjective happiness 
+
+# Non credo serva mettere !is.na perchè il dataset dovrebbere essere già clean (senza na)
 
 ESS9_clean |>
   filter(!is.na(wealth), !is.na(happy_group)) |>
@@ -22,6 +42,8 @@ ESS9_clean |>
   arrange(desc(perc_on_total))
 
 #check for NAs
+
+# Il clean dataset è già senza NA
 
 total_rows <- nrow(ESS9_clean)
 na_rows <- sum(is.na(ESS9_clean$wealth) | is.na(ESS9_clean$happy_group))
