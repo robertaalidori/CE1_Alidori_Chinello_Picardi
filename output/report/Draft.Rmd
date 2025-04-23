@@ -1,0 +1,56 @@
+---
+title: "Report_Draft"
+output: html_document
+date: "2025-04-23"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This research project aims to understand whether individual's perception of economic inequality has an impact on subjective well-being. A consistent body of research (see Lynch et al., 2004; Wilkinson and Pickett, 2009) has indeed highlighted that economic inequality has an adverse impact on individuals' happiness, general health and social cohesion. Income inequality is generally measured with indicators such as the Gini index, however a recent research stream (see Vezzoli et al., 2022) has drawn attention to the much more relevant impact of perception of inequality on well-being, compared to other objective measures of inequality. 
+
+This project test whether there is a correlation between perception of inequality and subjective well-being among people living in European countries. We hypothesize that the lower the perception of economic inequality, the higher the level of subjective well-being. We assess this hypothesis using the data-set provided by the European Social Survey (ESS), a cross-national survey across Europe which provides rigorous data on attitudes, beliefs and behavior patterns among individuals living in European countries.
+
+## Variables
+
+To measure perception of inequality and subjective well-being we use the ESS Round 9, which has a section with a special focus on justice and fairness. 
+
+From the data-set we selected two variables that provides the most accurate measurements to operationalize our concepts of interest. 
+
+- Variable 1: 'happy' - How happy are you
+
+- Variable 2: 'wltdffr' - Differences in wealth in country, how fair
+
+After the selection, we have created two new versions of the variables. They contain fewer meaningful categories in order to reduce complexity and improve the statistical power of our analysis, and no missing values.
+
+- New variable 1: 'happy_group' - categorical variable with 3 values (Low, Medium, High)
+
+- New variable 2: 'wealth' - categorical variable with 3 values (Fair, Somewhat fair, Very unfair)
+
+## Anlysis
+
+
+## Plots
+
+
+### Plot 1
+
+
+### Plot 2
+
+
+## Conclusion
+
+### Bibbliography
+
+Lynch, J., Smith, G.D., Harper, S., Hillemeier, M., Ross, N., Kaplan, G.A., Wolfson, M., 2004. Is income inequality a determinant of population health? Part 1. A systematic review. Milbank Q., 82(1), 5-99. 
+
+Vezzoli, M., Valtorta, R.R., Mari, S., Durante, F. and Volpato, C., 2023. Effects of objective and subjective indicators of economic inequality on subjective well‐being: Underlying mechanisms. Journal of Applied Social Psychology, 53(2), 85-100.
+
+Wilkinson, R.G., & Pickett, K.E., 2009. Income Inequality and Social Dysfunction. Annual Review of Sociology, 35, 493–511.
+
+
