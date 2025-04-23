@@ -11,9 +11,9 @@ library(tidyverse)
 library(ggplot2)
 library(broom)
 
+ESS9_clean <- read_csv("02_recoded_data/ESS9_clean.csv")
 ESS9 <- read_csv("01_raw_data/ESS9.csv")
 control_var <- lm(happy ~ wltdffr + gndr + agea + eduyrs, data = ESS9)
-ESS9_clean <- read_csv("02_recoded_data/ESS9_clean.csv")
 ```
 
 ## Introduction

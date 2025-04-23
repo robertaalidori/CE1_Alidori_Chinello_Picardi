@@ -15,6 +15,9 @@ The aim of the project is to explore the relationship between perceived economic
 "04_plots"" - graphical outputs used in the final report
 "05_output" - rdm file with the final report
 
+WARNING: The data in the "01_raw_data" folder is not included in this repository due to its size. Please, when consulting this project, upload the file ESS9.csv in the "01_raw_data" folder. 
+The file can be downloaded from the ESS website: https://www.europeansocialsurvey.org/data/download.html?file=ESS9e02_1.zip
+
 ## Contributions
 
 - Number of commits:
