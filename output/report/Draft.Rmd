@@ -15,7 +15,10 @@ This research project aims to understand whether individual's perception of econ
 
 This project test whether there is a correlation between perception of inequality and subjective well-being among people living in European countries. We hypothesize that the lower the perception of economic inequality, the higher the level of subjective well-being. We assess this hypothesis using the data-set provided by the European Social Survey (ESS), a cross-national survey across Europe which provides rigorous data on attitudes, beliefs and behavior patterns among individuals living in European countries.
 
-## Variables
+
+
+## Data and methods
+
 
 To measure perception of inequality and subjective well-being we use the ESS Round 9, which has a section with a special focus on justice and fairness. 
 
@@ -35,10 +38,11 @@ After the selection, we have created two new versions of the variables. They con
 
 ### Anlysis
 
+
 We first conducted a descriptive analysis to explore the distribution of happiness and perceived wealth fairness across the sample. We then conducted a chi-square test to assess whether the two categorical variables were statistically associated. To further investigate if the relations was robust we estimated a linear regression model with other controlling variables.
 
 
-To measure the percentages of the two variables toghether we created a cross-table with percentages.
+To measure the percentages of the two variables together we created a cross-table with percentages.
 We found out that the majority of individuals fall into the “High” happiness category, regardless of their perception of fairness. However, the proportion of "Low" happiness is highest among those who perceive wealth as "Very Unfair" (3.0%), compared to only 0.2% in the “Fair” group.
 
 We then conducted a chi-square test, confirming that the association between wealth and happy_group is statistically significant (χ² = 879.96, df = 4, p < 0.001), suggesting that perceptions of inequality are meaningfully related to levels of subjective wellbeing.
@@ -53,7 +57,7 @@ We also calculated the average happiness level within each category of perceived
 These differences, although modest, show a clear decreasing trend in average happiness as the perception of unfairness increases. This trend is accompanied by 95% confidence intervals that do not overlap substantially, indicating statistically robust group differences.
 
 
-ADD-ON:
+ADD-ON analysis:
 
 To assess the relationship between perceived inequality and happiness while controlling for individual-level characteristics, we estimated a linear regression model including gender (gndr), age (agea), and years of education (eduyrs) alongside perceived inequality (wltdffr). 
 
@@ -73,18 +77,20 @@ These results suggest that both higher perceived inequality and higher education
 
 
 
+# Results 
 
 
-## Plots
 
 
-### Plot 1
+
+## Discussion 
 
 
-### Plot 2
 
 
-## Conclusion
+
+
+
 
 ### Bibbliography
 
