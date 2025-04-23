@@ -40,6 +40,7 @@ wt
 
 table(ESS9_clean$wealth, ESS9_clean$happy_group)
 
+
 #distribution of population across wealth fairness and subjective happiness by percentages 
 
 ESS9_clean |>
@@ -51,7 +52,7 @@ ESS9_clean |>
 
 
 
-#chisquare 
+#chi-square 
 
 
 table_chisq <- table(ESS9_clean$wealth, ESS9_clean$happy_group)
@@ -83,6 +84,6 @@ ESS9_clean |>
 
 lm(happy ~ wltdffr + gndr + agea, data = ESS9)
 
-#it's clear that wealth and education have a statistically significant effect on happiness
+# Although low, education has a statistically significant effect on happiness
 
 
