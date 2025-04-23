@@ -9,52 +9,37 @@ library(dplyr)
 
 # Frequency health
 hn <- table(ESS9_clean$happy)
-
+hn
 #Proportion health
 hp <- prop.table(hn) 
-
+hp
 # Putting the two together health
 ht  <- cbind(hn, hp)
-
+ht
 # Frequency wealth
 wn <- table(ESS9_clean$wealth)
-
+wn
 #Proportion wealth
 wp <- prop.table(wn) 
-
+wp
 # Putting the two together health
 wt  <- cbind(wn, wp)
-
+wt
 #table 
 
 table(ESS9_clean$wealth, ESS9_clean$happy_group)
 
 #distribution of population across wealth fairness and subjective happiness 
 
-# Non credo serva mettere !is.na perchè il dataset dovrebbere essere già clean (senza na)
+# percentages
 
 ESS9_clean |>
-  filter(!is.na(wealth), !is.na(happy_group)) |>
   count(wealth, happy_group) |> 
   mutate(
     perc_on_total = round(100 * n / sum(n), 1)
     ) |>
   arrange(desc(perc_on_total))
 
-#check for NAs
-
-# Il clean dataset è già senza NA
-
-total_rows <- nrow(ESS9_clean)
-na_rows <- sum(is.na(ESS9_clean$wealth) | is.na(ESS9_clean$happy_group))
-valid_rows <- total_rows - na_rows
-perc_na <- round(100 * na_rows / total_rows, 2)
-
-cat("Totale righe:", total_rows, "\n")
-cat("Righe con NA rimosse:", na_rows, "\n")
-cat("Percentuale di NA:", perc_na, "%\n")
-
-#RESULT NA: 0 
 
 
 #chisquare 
@@ -91,7 +76,8 @@ lm(happy ~ wltdffr + gndr + agea, data = ESS9)
 
 #graph? 
 
-control_var <- lm(happy ~ wltdffr + gndr + agea, data = ESS9)
+control_var <- lm(happy ~ wltdffr + gndr + agea + eduyrs, data = ESS9)
+control_var
 
 
 library(broom)
@@ -108,6 +94,6 @@ tidy(control_var, conf.int = TRUE) |>
   ) +
   theme_minimal()
 
-#it's clear that only wealth has a statistically significat effect on happiness
+#it's clear that wealth and education have a statistically significant effect on happiness
 
 
