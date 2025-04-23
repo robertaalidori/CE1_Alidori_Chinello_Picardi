@@ -1,5 +1,5 @@
 ---
-title: "Report_Draft"
+title: "Report"
 output: html_document
 date: "2025-04-23"
 ---
@@ -65,23 +65,6 @@ These differences, although modest, show a clear decreasing trend in average hap
 
 
 
-# Graphical representation
-
-
-```{r}
-p <- ggplot(ESS9_clean, aes(x = wealth, fill = happy_group)) +
-  geom_bar(position = "fill") +
-  labs(title = "Association between Wealth Discrepancies and Happiness",
-       x = "Wealth Discrepancy",
-       y = "Proportion of Happiness Level") +
-  scale_fill_brewer(palette = "Set4") +
-  theme_minimal()
-
-print(p)
-```
-
-
-
 # ADD-ON analysis:
 
 To assess the relationship between perceived inequality and happiness while controlling for individual-level characteristics, we estimated a linear regression model including gender (gndr), age (agea), and years of education (eduyrs) alongside perceived inequality (wltdffr). 
@@ -97,6 +80,23 @@ gndr; +0.003 – Small and not significant
 agea; -0.00006 – Negligible
 
 These results suggest that both higher perceived inequality and higher education levels are independently associated with higher reported happiness, although the overall explanatory power of the model remains low.
+
+
+
+# Graphical representation
+
+
+```{r}
+p <- ggplot(ESS9_clean, aes(x = wealth, fill = happy_group)) +
+  geom_bar(position = "fill") +
+  labs(title = "Association between Wealth Discrepancies and Happiness",
+       x = "Wealth Discrepancy",
+       y = "Proportion of Happiness Level") +
+  scale_fill_brewer(palette = "Set4") +
+  theme_minimal()
+
+print(p)
+```
 
 
 ```{r}
