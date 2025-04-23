@@ -31,7 +31,48 @@ After the selection, we have created two new versions of the variables. They con
 
 - New variable 2: 'wealth' - categorical variable with 3 values (Fair, Somewhat fair, Very unfair)
 
-## Anlysis
+
+
+### Anlysis
+
+We first conducted some descriptive analysis and then proceed with a chi-square test as we had categorical variables. To see if the analysis was robust or there are other variables that may evidence a correlation, we conducted a regression model for controlling variables.
+
+
+To measure the percentages of the two variables toghether we created a cross-table with percentages.
+We found out that the majority of individuals fall into the “High” happiness category, regardless of their perception of fairness. However, the proportion of "Low" happiness is highest among those who perceive wealth as "Very Unfair" (3.0%), compared to only 0.2% in the “Fair” group.
+
+We then conducted a chi-square test, confirming that the association between wealth and happy_group is statistically significant (χ² = 879.96, df = 4, p < 0.001), suggesting that perceptions of inequality are meaningfully related to levels of subjective wellbeing.
+
+
+We also calculated the average happiness level within each category of perceived wealth fairness. The means are as follows:
+
+ - Fair: 8.16
+ - Somewhat Fair: 7.74
+ - Very Unfair: 7.47
+
+These differences, although modest, show a clear decreasing trend in average happiness as the perception of unfairness increases. This trend is accompanied by 95% confidence intervals that do not overlap substantially, indicating statistically robust group differences.
+
+
+ADD-ON:
+
+To assess the relationship between perceived inequality and happiness while controlling for individual-level characteristics, we estimated a linear regression model including gender (gndr), age (agea), and years of education (eduyrs) alongside perceived inequality (wltdffr). 
+
+Results:
+
+wltdffr; +0.052 – Positive and statistically significant
+
+eduyrs; +0.024 – Positive and statistically significant
+
+gndr; +0.003 – Small and not significant
+
+agea; -0.00006 – Negligible
+
+These results suggest that both higher perceived inequality and higher education levels are independently associated with higher reported happiness, although the overall explanatory power of the model remains low.
+
+
+
+
+
 
 
 ## Plots
