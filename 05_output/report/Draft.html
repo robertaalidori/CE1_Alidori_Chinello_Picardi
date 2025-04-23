@@ -376,8 +376,8 @@ Survey (ESS), a cross-national survey across Europe which provides
 rigorous data on attitudes, beliefs and behavior patterns among
 individuals living in European countries.</p>
 </div>
-<div id="variables" class="section level2">
-<h2>Variables</h2>
+<div id="data-and-methods" class="section level2">
+<h2>Data and methods</h2>
 <p>To measure perception of inequality and subjective well-being we use
 the ESS Round 9, which has a section with a special focus on justice and
 fairness.</p>
@@ -393,26 +393,60 @@ variables. They contain fewer meaningful categories in order to reduce
 complexity and improve the statistical power of our analysis, and no
 missing values.</p>
 <ul>
-<li><p>New variable 1: Happy group - categorical variable with 3 values
-(Low, Medium, High)</p></li>
-<li><p>New variable 2: wealth - categorical variable with 3 values
+<li><p>New variable 1: ‘happy_group’ - categorical variable with 3
+values (Low, Medium, High)</p></li>
+<li><p>New variable 2: ‘wealth’ - categorical variable with 3 values
 (Fair, Somewhat fair, Very unfair)</p></li>
 </ul>
+<div id="anlysis" class="section level3">
+<h3>Anlysis</h3>
+<p>We first conducted a descriptive analysis to explore the distribution
+of happiness and perceived wealth fairness across the sample. We then
+conducted a chi-square test to assess whether the two categorical
+variables were statistically associated. To further investigate if the
+relations was robust we estimated a linear regression model with other
+controlling variables.</p>
+<p>To measure the percentages of the two variables together we created a
+cross-table with percentages. We found out that the majority of
+individuals fall into the “High” happiness category, regardless of their
+perception of fairness. However, the proportion of “Low” happiness is
+highest among those who perceive wealth as “Very Unfair” (3.0%),
+compared to only 0.2% in the “Fair” group.</p>
+<p>We then conducted a chi-square test, confirming that the association
+between wealth and happy_group is statistically significant (χ² =
+879.96, df = 4, p &lt; 0.001), suggesting that perceptions of inequality
+are meaningfully related to levels of subjective wellbeing.</p>
+<p>We also calculated the average happiness level within each category
+of perceived wealth fairness. The means are as follows:</p>
+<ul>
+<li>Fair: 8.16</li>
+<li>Somewhat Fair: 7.74</li>
+<li>Very Unfair: 7.47</li>
+</ul>
+<p>These differences, although modest, show a clear decreasing trend in
+average happiness as the perception of unfairness increases. This trend
+is accompanied by 95% confidence intervals that do not overlap
+substantially, indicating statistically robust group differences.</p>
+<p>ADD-ON analysis:</p>
+<p>To assess the relationship between perceived inequality and happiness
+while controlling for individual-level characteristics, we estimated a
+linear regression model including gender (gndr), age (agea), and years
+of education (eduyrs) alongside perceived inequality (wltdffr).</p>
+<p>Results:</p>
+<p>wltdffr; +0.052 – Positive and statistically significant</p>
+<p>eduyrs; +0.024 – Positive and statistically significant</p>
+<p>gndr; +0.003 – Small and not significant</p>
+<p>agea; -0.00006 – Negligible</p>
+<p>These results suggest that both higher perceived inequality and
+higher education levels are independently associated with higher
+reported happiness, although the overall explanatory power of the model
+remains low.</p>
 </div>
-<div id="anlysis" class="section level2">
-<h2>Anlysis</h2>
 </div>
-<div id="plots" class="section level2">
-<h2>Plots</h2>
-<div id="plot-1" class="section level3">
-<h3>Plot 1</h3>
-</div>
-<div id="plot-2" class="section level3">
-<h3>Plot 2</h3>
-</div>
-</div>
-<div id="conclusion" class="section level2">
-<h2>Conclusion</h2>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
 <div id="bibbliography" class="section level3">
 <h3>Bibbliography</h3>
 <p>Lynch, J., Smith, G.D., Harper, S., Hillemeier, M., Ross, N., Kaplan,
@@ -425,6 +459,7 @@ inequality on subjective well‐being: Underlying mechanisms. Journal of
 Applied Social Psychology, 53(2), 85-100.</p>
 <p>Wilkinson, R.G., &amp; Pickett, K.E., 2009. Income Inequality and
 Social Dysfunction. Annual Review of Sociology, 35, 493–511.</p>
+</div>
 </div>
 </div>
 
