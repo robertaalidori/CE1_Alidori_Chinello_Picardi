@@ -54,7 +54,8 @@ ggplot(ESS9_clean, aes(x = wealth, fill = happy_group)) +
 ggsave("04_plots/wealth_happiness_association.jpeg", 
        width = 8, height = 6, dpi = 300)
 
-
+#Load ESS9 dataset
+ESS9 <- read_csv("01_raw_data/ESS9e03_2.csv")
 
 
 #regression with control variables to make the analysis more robust
