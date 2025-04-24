@@ -2,7 +2,7 @@ library(dplyr)
 library(tidyverse)
 
 # Load dataset
-ESS9_clean <- read_csv("recoded_data/ESS9_clean.csv")
+ESS9_clean <- read_csv("02_recoded_data/ESS9_clean.csv")
 
 # Exploratory data analysis
 # Check the structure of the dataset
@@ -20,7 +20,7 @@ ggplot(ESS9_clean, aes(x = fct_infreq(happy_group))) +
   theme_minimal()
 
 # Saving the plot
-ggsave("plots/happy_group_bar_chart.png", 
+ggsave("04_plots/happy_group_bar_chart.png", 
        width = 8, height = 6, dpi = 300)
 
 
@@ -35,7 +35,7 @@ ggplot(ESS9_clean, aes(x = fct_infreq(wealth))) +
   theme_minimal()
 
 # Saving the plot
-ggsave("plots/wealth_bar_chart.png", 
+ggsave("04_plots/wealth_bar_chart.jpeg", 
        width = 8, height = 6, dpi = 300)
 
 
@@ -51,7 +51,7 @@ ggplot(ESS9_clean, aes(x = wealth, fill = happy_group)) +
   theme_minimal()
 
 #Saving the plot
-ggsave("plots/wealth_happiness_association.png", 
+ggsave("04_plots/wealth_happiness_association.jpeg", 
        width = 8, height = 6, dpi = 300)
 
 
@@ -83,7 +83,7 @@ tidy(control_var, conf.int = TRUE) |>
   ) +
   theme_minimal()
 
-ggsave("plots/control_var_plot.png", 
+ggsave("04_plots/control_var_plot.jpeg", 
        width = 8, height = 6, dpi = 300)
 
 #it's clear that wealth and education have a statistically significant effect on happiness
