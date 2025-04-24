@@ -25,9 +25,9 @@ The file can be downloaded from the ESS website: https://www.europeansocialsurve
    - Giulia Picardi:
    - Roberta Alidori:
 - Number of issues opened: 1
-- Number of pull requests opened: ?
+- Number of pull requests opened: 4
 - Number of pull requests accepted and merged: 3
-- Number of new branches opened: ?
+- Number of new branches opened: 2
 
 ## Analysis Summary
 
