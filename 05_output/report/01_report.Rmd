@@ -79,7 +79,7 @@ gndr; +0.003 – Small and not significant
 
 agea; -0.00006 – Negligible
 
-These results suggest that both higher perceived inequality (shouldn't it be higher perceived equality???) and higher education levels are independently associated with higher reported happiness, although the overall explanatory power of the model remains low.
+These results suggest that both perceived inequality and education levels are independently associated with higher reported happiness, although the overall explanatory power of the model remains low.
 
 
 
