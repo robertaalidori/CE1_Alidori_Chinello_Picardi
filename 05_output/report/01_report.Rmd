@@ -18,9 +18,9 @@ control_var <- lm(happy ~ wltdffr + gndr + agea + eduyrs, data = ESS9)
 
 ## Introduction
 
-This research project aims to understand whether individual's perception of economic inequality has an impact on subjective well-being. A consistent body of research (see Lynch et al., 2004; Wilkinson and Pickett, 2009) has indeed highlighted that economic inequality has an adverse impact on individuals' happiness, general health and social cohesion. The rationale behind this mechanism relates to the fact that in more unequal societies people tend to increasingly make social status comparisons, which lead to lower self-esteem and life satisfaction, as well as and increased stress (Wilkinson and Pickett, 2009). Income inequality is generally measured with indicators such as the Gini index, however a recent research stream (see Vezzoli et al., 2022) has drawn attention to the much more relevant impact of perception of inequality on well-being, compared to other objective measures of inequality. T
+This research project aims to understand whether individuals' perception of economic inequality has an impact on subjective well-being. A consistent body of research (see Lynch et al., 2004; Wilkinson and Pickett, 2009) has indeed highlighted that economic inequality has an adverse impact on individuals' happiness, general health and social cohesion. The rationale behind this mechanism is that in more unequal societies people tend to increasingly make social status comparisons, which leads to lower self-esteem and life satisfaction, as well as increased stress (Wilkinson and Pickett, 2009). Income inequality is generally measured with indicators such as the Gini index, however, a recent research stream (see Vezzoli et al., 2022) has drawn attention to the much more relevant impact of perception of inequality on well-being, compared to other objective measures of inequality. 
 
-This project test whether there is a correlation between perception of inequality and subjective well-being among people living in European countries. We hypothesize that the lower the perception of economic inequality, the higher the level of subjective well-being. We assess this hypothesis using the data-set provided by the European Social Survey (ESS), a cross-national survey across Europe which provides rigorous data on attitudes, beliefs and behavior patterns among individuals living in European countries.
+This project tests whether there is a correlation between perception of inequality and subjective well-being among people living in European countries. We hypothesize that the lower the perception of economic inequality, the higher the level of subjective well-being. We assess this hypothesis using the data set provided by the European Social Survey (ESS), a cross-national survey across Europe which provides rigorous data on attitudes, beliefs and behaviour patterns among individuals living in European countries.
 
 
 
@@ -119,15 +119,15 @@ print(p_2)
 
 ## Results 
 
-In this research project we attempted to test the correlation between perception of inequality and subjective well-being among people living in European countries. In order to do so, we used data from the European Social Survey  Round 9. Specifically, we focused on the variables measuring the level of happiness and perceived fairness in a country distribution of wealth.
+In this research project we attempted to test the correlation between perception of inequality and subjective well-being among people living in European countries. To do so, we used data from the European Social Survey  Round 9. Specifically, we focused on the variables measuring the level of happiness and perceived fairness in a country's distribution of wealth.
 
-The results of the cross-tabulation highlight a tendency of people with low level of happiness to be higher among those with the highest perceptions of inequality, while diminishing as the level of perception of equality increases. The opposite is true for people with high level of happiness. The chi-square test confirmed that the association is statistically significant. 
+The results of the cross-tabulation highlight a tendency of people with low levels of happiness to be higher among those with the highest perceptions of inequality while diminishing as the level of perception of equality increases. The opposite is true for people with high level of happiness. The chi-square test confirmed that the association is statistically significant. 
 
-We further investigated the association considering other individual-level characteristics, such as age, gender and level of education, through a linear regression model, which confirmed the association between perception of inequality and level of happiness.
+We further investigated the association considering other individual-level characteristics, such as age, gender, and levels of education, through a linear regression model, which confirmed the association between perception of inequality and levels of happiness.
 
 ## Discussion 
 
-In conclusion, our analysis showed that there is a negative association between level of perceived inequality and level of subjective well-being: people with higher perception of inequality tend to display lower levels of happiness compared to those lower perception of inequality. The results confirm our initial hypothesis.
+In conclusion, our analysis showed that there is a negative association between the level of perceived inequality and the level of subjective well-being: people with higher perceptions of inequality tend to display lower levels of happiness compared to those with lower perceptions of inequality. The results confirm our initial hypothesis.
 However, our regression analysis, which controlled for other individual-level characteristics, displays an overall low explanatory power, indicating that the phenomenon is complex and should be investigated in much greater depth. As an example, area of residence, income and health, are some factors that could be explored as they may influence both the level of happiness and perceived inequality. 
 Although a more comprehensive investigation falls outside the scope of this project, future research might explore those aspects in greater depth, to further elucidate the relationship between perceived inequality and well-being.
 
