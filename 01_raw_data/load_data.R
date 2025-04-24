@@ -11,6 +11,3 @@ library(readr)
 ESS9 <- read_csv("01_raw_data/ESS9e03_2.csv")
 view(ESS9)
 
-
-
-

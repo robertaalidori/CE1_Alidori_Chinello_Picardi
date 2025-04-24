@@ -8,7 +8,7 @@ library(readr)
 
 # Load raw dataset
 
-ESS9 <- read_csv("raw_data/ESS9.csv")
+ESS9 <- read_csv("01_raw_data/ESS9e03_2.csv")
 
 # Select relevant variables
 
@@ -69,9 +69,9 @@ ESS9_clean |>
 
 # Save the recoded datasets
 
-write_csv(ESS9_recoded, "recoded_data/ESS9_recoded.csv")
+write_csv(ESS9_recoded, "02_recoded_data/ESS9_recoded.csv")
 
-write_csv(ESS9_clean, "recoded_data/ESS9_clean.csv")
+write_csv(ESS9_clean, "02_recoded_data/ESS9_clean.csv")
 
 
 #check for the final observation we have 
