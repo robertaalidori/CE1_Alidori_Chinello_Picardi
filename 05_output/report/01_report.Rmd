@@ -116,7 +116,7 @@ p_2 <- tidy(control_var, conf.int = TRUE) |>
 print(p_2)
 ```
 
-
+![](https://github.com/robertaalidori/CE1_Alidori_Chinello_Picardi/blob/main/04_plots/control_var_plot.jpeg?raw=true)
 
 ## Results 
 
